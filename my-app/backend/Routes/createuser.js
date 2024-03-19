@@ -6,9 +6,9 @@ router.post("/createuser",async (req,res)=>{
     try {
         await user.create({
             name:req.body.name,
+            location:req.body.location,
             email:req.body.email,
-            password:req.body.password,
-            location:req.body.location
+            password:req.body.password
         })
         res.json({success:true});
     } catch (error) {
