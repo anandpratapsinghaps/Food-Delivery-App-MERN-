@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom'
 export default function signup() {
 const [credentials, setcredentials] = useState({name:"",email:"",password:"",Geolocation:""})
 const handleSubmit = async(e) =>{
-    e.preventDefault();
+
+    e.preventDefault();   //synthetic event
+
     console.log(JSON.stringify({name:credentials.name,email:credentials.email,password:credentials.password,location:credentials.Geolocation}))
     const response = await fetch("http://localhost:5000/api/createuser",{
         method:'POST',
