@@ -20,6 +20,8 @@ const handleSubmit = async(e) =>{
     }
 
     if(json.success){
+        localStorage.setItem("authToken", json.authToken);
+        console.log(localStorage.getItem("authToken"))
         navigate("/");
     }
 }

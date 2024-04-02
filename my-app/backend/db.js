@@ -6,13 +6,24 @@ const mongoDB =async()=>{
         else{
             console.log('connected');
             const fetched_data = await mongoose.connection.db.collection("food_items");
-            fetched_data.find({}).toArray(function(err,data){
+            fetched_data.find({}).toArray(async function(err,data){
+            const foodCollection = await mongoose.connection.db.collection("food_category"); 
+            foodCollection.find({}).toArray(async function(err,catdata){
                 if(err) console.log(err);
-                else console.log();
+                else{
+                    global.food_items = data;
+                    global.food_category = catdata;
+                }
+            })  
+                // if(err) console.log(err);
+                // else{
+                //     global.food_items = data;
+                // }
             })
     }
     });
 }
+
 
 module.exports=mongoDB;
 
