@@ -3,6 +3,9 @@ import React from 'react'
 export default function Card(props) {
     let options=props.options;
     let priceOptions=Object.keys(options);
+    const handleAddToCart=()=>{
+
+    }
 
     return (
     <div className='d-inline'> 
@@ -30,6 +33,8 @@ export default function Card(props) {
                 Total Price
             </div>
         </div>
+        <hr />
+        <button className={`btn btn-warning justify-center ms-2 `} onClick={handleAddToCart}>Add to Cart</button>
     </div>
 </div>
 </div></div>
