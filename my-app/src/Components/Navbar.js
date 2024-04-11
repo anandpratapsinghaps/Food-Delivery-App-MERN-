@@ -3,7 +3,6 @@ import {Link,useNavigate} from 'react-router-dom'
 import Badge from 'react-bootstrap/Badge'
 import logo from './images/attachment_127439993.png'
 import Modal from '../Modal'
-import cart from '../Screens/cart'
 import { useCart } from './contextReducer'
 
 export default function Navbar() {
