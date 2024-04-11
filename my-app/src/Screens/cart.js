@@ -1,5 +1,5 @@
 import React from 'react'
-import trash from '../trash.svg'
+import Delete from '@material-ui/icons/Delete'
 import { useCart,useDispatchCart } from '../Components/contextReducer';
 export default function Cart() {
 let data = useCart();
