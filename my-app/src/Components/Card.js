@@ -14,6 +14,7 @@ export default function Card(props) {
         await dispatch({type:"ADD",id:props.foodItems._id,name:props.foodItems.name,price:finalPrice,qty:qty,size:size})
         console.log(data)
     }
+    
 
     let finalPrice = qty * parseInt(options[size]);
     useEffect(()=>{
