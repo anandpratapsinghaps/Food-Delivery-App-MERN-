@@ -4,6 +4,7 @@ import Badge from 'react-bootstrap/Badge'
 import logo from './images/attachment_127439993.png'
 import Modal from '../Modal'
 import { useCart } from './ContextReducer'
+import Cart from '../Screens/Cart'
 
 export default function Navbar() {
   let data=useCart();
@@ -44,7 +45,7 @@ export default function Navbar() {
           My Cart{" "}
           <Badge pill bg='warning'>{data.length}</Badge>
           </div>
-          {cartView ? <Modal onClose={() => setCartView(false)}><cart/></Modal> : ""}
+          {cartView ? <Modal onClose={() => setCartView(false)}><Cart/></Modal> : ""}
           <div className='btn bg-white text-danger mx-2'onClick={handleLogout}>Logout</div>
         </div>
         }
