@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Screens/Home';
 import Login from './Screens/Login';
 import Signup from './Screens/signup.js';
-import Cart from './Screens/cart.js';
+import Cart from './Screens/Cart.js';
 
 import {
   BrowserRouter as Router,
