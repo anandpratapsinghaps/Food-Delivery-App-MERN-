@@ -3,7 +3,7 @@ import {Link,useNavigate} from 'react-router-dom'
 import Badge from 'react-bootstrap/Badge'
 import logo from './images/attachment_127439993.png'
 import Modal from '../Modal'
-import { useCart } from './contextReducer'
+import { useCart } from './ContextReducer'
 
 export default function Navbar() {
   let data=useCart();
@@ -13,7 +13,9 @@ export default function Navbar() {
     localStorage.removeItem("authToken");
     navigate("/")
   }
-
+  const loadCart = () => {
+    setCartView(true)
+  }
   return (
     <div><nav className="navbar navbar-expand-lg navbar-dark">
     <div className="container-fluid">
@@ -38,7 +40,7 @@ export default function Navbar() {
         <Link className="btn bg-white text-warning mx-1" to="/createuser">SignUp</Link>
         </div>
         :<div>
-          <div className='btn bg-white text-warning mx-2'onClick={()=>{setCartView(true)}}>
+          <div className='btn bg-white text-warning mx-2'onClick={loadCart}>
           My Cart{" "}
           <Badge pill bg='warning'>{data.length}</Badge>
           </div>

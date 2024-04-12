@@ -1,22 +1,21 @@
 import React from 'react'
 import Delete from '@material-ui/icons/Delete'
-import { useCart,useDispatchCart } from '../Components/contextReducer';
+import { useCart,useDispatchCart } from '../Components/ContextReducer';
 
 export default function Cart() {
 let data = useCart();
 let dispatch = useDispatchCart();
-if (data.length === 0) {
+if (data.length===0) {
     return (
         <div>
             <div className='m-5 w-100 text-center fs-3'>The Cart is Empty!</div>
         </div>
-    )
+    );
 }
 
 let totalPrice = data.reduce((total, food) => total + food.price, 0)
 return (
     <div>
-
     {/* {console.log(data)} */}
     <div className='container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md' >
         <table className='table table-hover '>
@@ -31,14 +30,15 @@ return (
                 </tr>
             </thead>
             <tbody>
-            {data.map((food, index) => (
+            {data.map((food, index) => ( 
                 <tr>
                     <th scope='row' >{index + 1}</th>
                     <td >{food.name}</td>
                     <td>{food.qty}</td>
                     <td>{food.size}</td>
                     <td>{food.price}</td>
-                    <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
+                    <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td>
+                </tr>
             ))}
         </tbody>
         </table>
