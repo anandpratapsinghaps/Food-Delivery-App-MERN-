@@ -26,8 +26,8 @@ const onChange =(event)=>{
 }
 
     return (
-    <>
-    <div className="container">
+    <div style={{ backgroundImage: 'url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', backgroundSize: 'cover',height: '100vh' , display:'flex',justifyContent: 'center', alignItems: 'center' }}>
+    <div className="container" style={{maxWidth: '500px',backgroundColor:'black', padding: '20px', borderRadius: '15px'}}>
     <form onSubmit={handleSubmit}>
     <div className="mb-3">
         <label htmlFor="name" className="form-label">Name</label>
@@ -49,6 +49,6 @@ const onChange =(event)=>{
     <Link to='/login' className='m-3 btn btn-danger'>Already a user</Link>
     </form>
     </div>
-    </>
+    </div>
     )
 }

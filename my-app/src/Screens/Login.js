@@ -20,6 +20,7 @@ const handleSubmit = async(e) =>{
     }
 
     if(json.success){
+        localStorage.setItem('userEmail', credentials.email)
         localStorage.setItem("authToken", json.authToken);
         console.log(localStorage.getItem("authToken"))
         navigate("/");
@@ -29,8 +30,8 @@ const onChange =(event)=>{
     setcredentials({...credentials,[event.target.name]:event.target.value})
 }
 return (
-    <div>
-    <div className="container">
+    <div style={{backgroundImage: 'url("https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover',display:'flex',justifyContent: 'center', alignItems: 'center' }}>
+    <div className="container" style={{maxWidth: '500px',backgroundColor:'black', padding: '20px', borderRadius: '15px'}}>
     <form onSubmit={handleSubmit}>
     <div className="mb-3">
         <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
