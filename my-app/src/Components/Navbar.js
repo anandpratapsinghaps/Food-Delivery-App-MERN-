@@ -4,7 +4,7 @@ import Badge from 'react-bootstrap/Badge'
 import logo from './images/attachment_127439993.png'
 import Modal from '../Modal'
 import { useCart } from './ContextReducer'
-import Cart from '../Screens/cart'
+import Cart from '../Screens/Cart'
 
 export default function Navbar() {
   let data=useCart();
